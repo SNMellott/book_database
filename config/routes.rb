@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  get '/newbook', to: 'books#new'
+  post '/newbook', to: 'books#create'
   resources :users
+  resources :books
 end
