@@ -5,9 +5,7 @@
 
 <ul class="books">
   <% @books.each do |book| %>
-    <li>
-      <%= link_to book.title, book %>
-    </li>
+    <%= render book %>
   <% end %>
 </ul>
 <%= will_paginate %>
