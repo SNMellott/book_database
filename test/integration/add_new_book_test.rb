@@ -12,4 +12,14 @@ class AddNewBookTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     assert_select 'div.field_with_errors'
   end
+
+  test "valid book information" do
+    get newbook_path
+    assert_difference 'Book.count', 1 do
+      post newbook_path, params: {book: {title: "Example Title",
+                                         author: "Example Author"}}
+    end
+    follow_redirect!
+    assert_template 'books/show'
+  end
 end
