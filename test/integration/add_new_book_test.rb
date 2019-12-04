@@ -20,6 +20,5 @@ class AddNewBookTest < ActionDispatch::IntegrationTest
                                          author: "Example Author"}}
     end
     follow_redirect!
-    assert_template 'books/show'
   end
 end

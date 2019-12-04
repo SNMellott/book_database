@@ -5,6 +5,8 @@
       <h1>
         <%= @book.title %>
         <p>By: <%= @book.author %></p>
+        <%= link_to "Edit Book", edit_book_path, class: "btn btn-primary", role: "button" %>
+        <%= link_to "Back", books_path, class: "btn btn-primary", role: "button" %>
       </h1>
     </section>
   </aside>

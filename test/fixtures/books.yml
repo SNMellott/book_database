@@ -1,1 +1,9 @@
-#empty
+novel:
+  title: The Shining
+  author: Stephen King
+
+<% 30.times do |n| %>
+book_<%= n %>:
+  title: <%= "Book #{n}" %>
+  author: <%= "Book #{n}" %>
+<% end %>

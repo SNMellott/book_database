@@ -1,3 +1,13 @@
-#list of all current existing books.
+<% provide(:title, 'All books') %>
+<h1>All Books</h1>
 
-Hello world. 
+<%= link_to "Add a Book", newbook_path, class: "btn btn-primary", role: "button" %>
+
+<ul class="books">
+  <% @books.each do |book| %>
+    <li>
+      <%= link_to book.title, book %>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>
