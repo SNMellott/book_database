@@ -12,7 +12,7 @@ class BooksIndexTest < ActionDispatch::IntegrationTest
     get books_path
     assert_template 'books/index'
     assert_select 'div.pagination'
-    Book.paginate(page: 1).each do |book|
+    Book.order(:title).paginate(page: 1).each do |book|
       assert_select 'a[href=?]', book_path(book), text: book.title
     end
   end
