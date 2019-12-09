@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :admin_user, only: [:edit, :update, :destroy]
 
   def index
-    @books = Book.paginate(page: params[:page])
+    @books = Book.order(:title).paginate(page: params[:page])
   end
 
   def show
@@ -41,7 +41,7 @@ class BooksController < ApplicationController
   def destroy
     Book.find(params[:id]).destroy
     flash[:success] = "Book deleted"
-    redirect_to books_url
+    redirect_to books_path
   end
 
 private
@@ -61,6 +61,6 @@ private
   #confirms an admin user.
   def admin_user
     redirect_to(root_url) unless current_user.admin?
-  end 
+  end
 
 end

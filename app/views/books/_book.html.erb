@@ -1,7 +1,8 @@
 <li>
   <%= link_to book.title, book %>
   <% if current_user.admin? && !current_user?(book) %>
-      | <%= link_to "delete", book, method: :delete,
-                              data: {confirm: "You sure?"} %>
+    <%= link_to "delete", book, method: :delete,
+                          data: {confirm: "You sure?"},
+                          class: "btn btn-primary" %> 
   <% end %>
 </li>
