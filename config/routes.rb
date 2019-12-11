@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/newbook', to: 'books#create'
   resources :users
   resources :books
+  resources :checkouts, only: [:create]
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end
