@@ -6,6 +6,7 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <p><%= @user.books.map(&:title).join(' // ') %></p>
     </section>
   </aside>
 </div>
