@@ -2,12 +2,16 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="book_info">
-      <h1>
-        <%= @book.title %>
+      <h2>
+        <b><%= @book.title %></b>
         <p>By: <%= @book.author %></p>
-        <%= link_to "Edit Book", edit_book_path, class: "btn btn-primary", role: "button" %>
-        <%= link_to "Back", books_path, class: "btn btn-primary", role: "button" %>
-      </h1>
+        <p><%= @book.book_summary %></p>
+        <%= link_to "Edit Book", edit_book_path, class: "btn btn-warning btn-sm", role: "button" %>
+      </h2>
+      <h2>
+        <%= link_to "Borrow Book", '#', class: "btn btn-info btn-lg", role: "button" %>
+        <%= link_to "Back", books_path, class: "btn btn-info btn-lg", role: "button" %>
+      </h2>
     </section>
   </aside>
 </div>

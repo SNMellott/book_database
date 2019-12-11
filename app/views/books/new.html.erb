@@ -12,6 +12,9 @@
       <%= f.label :author %>
       <%= f.text_field :author, class: 'form-control' %>
 
+      <%= f.label :book_summary %>
+      <%= f.text_area :book_summary, class: 'form-control', rows: '3', id: 'exampleFormControlTextarea1' %>
+
       <%= f.submit "Add Book", class: "btn btn-primary" %>
     <% end %>
   </div>
