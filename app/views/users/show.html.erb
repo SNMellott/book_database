@@ -6,7 +6,16 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
-      <p><%= @user.books.map(&:title).join(' // ') %></p>
+      <ul class="checkout">
+        <% @user.books.each do |book| %>
+          <%= link_to book.title, book %>
+            <% if current_user.admin? && !current_user?(book) %>
+              <%= link_to "Return", checkout_url, method: :delete,
+                                    data: {confirm: "You sure?"},
+                                    class: "btn btn-danger btn-sm" %>
+            <% end %>
+        <% end %>
+      </ul>
     </section>
   </aside>
 </div>
