@@ -10,7 +10,7 @@
         <% @user.books.each do |book| %>
           <%= link_to book.title, book %>
             <% if current_user.admin? && !current_user?(book) %>
-              <%= link_to "Return", checkout_url, method: :delete,
+              <%= link_to "Return", checkout_path, method: :delete,
                                     data: {confirm: "You sure?"},
                                     class: "btn btn-danger btn-sm" %>
             <% end %>

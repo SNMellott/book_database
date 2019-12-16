@@ -12,7 +12,8 @@ class CheckoutsController < ApplicationController
   end
 
   def destroy
-    Checkout.find(checkout_params[:book_id]).destroy
+    @checkout = Checkout.find_by(params[:id])
+    @checkout.destroy
     flash[:success] = "Book returned"
     redirect_to user_path
   end
